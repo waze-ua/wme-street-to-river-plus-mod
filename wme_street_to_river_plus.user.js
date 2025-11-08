@@ -200,7 +200,7 @@ console.warn('Remove this line, when WME-Bootstrap will fix its syntax. now it c
       // 2014-01-09: Search for helper street. If found create or expand a river
       for (var s = W.selectionManager.getSelectedWMEFeatures().length - 1; s >= 0; s--) {
         var sel = W.selectionManager.getSelectedWMEFeatures()[s]._wmeObject
-        if (sel.type == 'segment') {
+        if (sel.type === 'segment') {
           // found segment
           foundSelectedSegment = true
           convertOK = convertToLandmark(sel, typ, isUnlimitedSize)
@@ -962,49 +962,49 @@ console.warn('Remove this line, when WME-Bootstrap will fix its syntax. now it c
       switch (getLanguage()) {
         case 'es': // 2014-06-05: Spanish
         case 'es-419':
-          langText = new Array('', 'Ancho (metros)', 'Cree una nueva calle, selecciónela y oprima este botón.', 'Calle a Río', 'Tamaño ilimitado',
+          langText = ['', 'Ancho (metros)', 'Cree una nueva calle, selecciónela y oprima este botón.', 'Calle a Río', 'Tamaño ilimitado',
             '¡No se encontró una calle sin guardar!', 'Todos los segmentos de la calle adentro del río. No se puede continuar.',
-            'Múltiples segmentos de la calle dentro del río. No se puede continuar', 'Other', 'Forest', 'Delete segment', 'Canal')
+            'Múltiples segmentos de la calle dentro del río. No se puede continuar', 'Other', 'Forest', 'Delete segment', 'Canal']
           break
         case 'fr': // 2014-06-05: French
-          langText = new Array('', 'Largura (mètres)', 'Crie uma nova rua, a selecione e clique neste botão.', 'Rue á rivière', 'Taille illimitée (dangereux)',
+          langText = ['', 'Largura (mètres)', 'Crie uma nova rua, a selecione e clique neste botão.', 'Rue á rivière', 'Taille illimitée (dangereux)',
             'Pas de nouvelle rue non enregistré trouvée!', 'Tous les segments de la rue dans la rivière. Vous ne pouvez pas continuer.',
-            'Plusieurs segments de rues à l\'intérieur de la rivière. Vous ne pouvez pas continuer.', 'Other', 'Forest', 'Delete segment', 'Canal')
+            'Plusieurs segments de rues à l\'intérieur de la rivière. Vous ne pouvez pas continuer.', 'Other', 'Forest', 'Delete segment', 'Canal']
           break
         case 'ru': // 2014-06-05: Russian
-          langText = new Array('', 'Ширина (в метрах)', 'Создайте новую дорогу (не сохраняйте), выберите ее и нажмите эту кнопку.', 'Река', 'Вся длина',
+          langText = ['', 'Ширина (в метрах)', 'Создайте новую дорогу (не сохраняйте), выберите ее и нажмите эту кнопку.', 'Река', 'Вся длина',
             'Не выделено ни одной не сохраненной дороги!', 'Все сегменты дороги находятся внутри реки. Преобразование невозможно.',
-            'Слишком много сегментов дороги находится внутри реки. Преобразование невозможно.', 'Контур', 'Лес', 'Удалить сегмент', 'Канал')
+            'Слишком много сегментов дороги находится внутри реки. Преобразование невозможно.', 'Контур', 'Лес', 'Удалить сегмент', 'Канал']
           break
         case 'uk': // 2018-05-03: Ukrainian
-          langText = new Array('', 'Ширина (в метрах)', 'Створіть нову дорогу (не зберігайте і не знімайте виділення) та натисніть цю кнопку.', 'Ріка', 'Безлімітна довжина (небезпечно)',
+          langText = ['', 'Ширина (в метрах)', 'Створіть нову дорогу (не зберігайте і не знімайте виділення) та натисніть цю кнопку.', 'Ріка', 'Безлімітна довжина (небезпечно)',
             'Не виділено жодної збереженої дороги!', 'Усі сегменти дороги знаходяться всередині ріки. Перетворення неможливе.',
-            'Занадто багато сегментів дороги знаходяться всередині ріки. Перетворення неможливе.', 'Контур', 'Ліс', 'Видалити сегмент', 'Канал')
+            'Занадто багато сегментів дороги знаходяться всередині ріки. Перетворення неможливе.', 'Контур', 'Ліс', 'Видалити сегмент', 'Канал']
           break
         case 'hu': // 2014-07-02: Hungarian
-          langText = new Array('', 'Szélesség (méter)', 'Hozzon létre egy új utcát, válassza ki, majd kattintson erre a gombra.', 'Utcából folyó', 'Korlátlan méretű (nem biztonságos)',
+          langText = ['', 'Szélesség (méter)', 'Hozzon létre egy új utcát, válassza ki, majd kattintson erre a gombra.', 'Utcából folyó', 'Korlátlan méretű (nem biztonságos)',
             'Nem található nem mentett és kiválasztott új utca!', 'Az útszakasz a folyón belül található! Nem lehet folytatni.',
-            'Minden útszakasz a folyón belül található! Nem lehet folytatni.', 'Other', 'Forest', 'Delete segment', 'Canal')
+            'Minden útszakasz a folyón belül található! Nem lehet folytatni.', 'Other', 'Forest', 'Delete segment', 'Canal']
           break
         case 'cs': // 2014-07-03: Czech
-          langText = new Array('', 'Šířka (metrů)', 'Vytvořte osu řeky, vyberte segment a stiskněte toto tlačítko.', 'Silnice na řeku', 'Neomezená šířka (nebezpečné)',
+          langText = ['', 'Šířka (metrů)', 'Vytvořte osu řeky, vyberte segment a stiskněte toto tlačítko.', 'Silnice na řeku', 'Neomezená šířka (nebezpečné)',
             'Nebyly vybrány žádné neuložené segmenty!', 'Všechny segmenty jsou uvnitř řeky! Nelze pokračovat.',
-            'Uvnitř řeky je více segmentů! Nelze pokračovat.', 'Other', 'Forest', 'Delete segment', 'Canal')
+            'Uvnitř řeky je více segmentů! Nelze pokračovat.', 'Other', 'Forest', 'Delete segment', 'Canal']
           break
         case 'pl': // 2014-11-08: Polish - By Zniwek
-          langText = new Array('', 'Szerokość (w metrach)', 'Stwórz ulicę, wybierz ją i kliknij ten przycisk.', 'Ulica w Rzekę', 'Nieskończony rozmiar (niebezpieczne)',
+          langText = ['', 'Szerokość (w metrach)', 'Stwórz ulicę, wybierz ją i kliknij ten przycisk.', 'Ulica w Rzekę', 'Nieskończony rozmiar (niebezpieczne)',
             'Nie znaleziono nowej i niezapisanej ulicy!', 'Wszystkie segmenty ulicy wewnątrz rzeki. Nie mogę kontynuować.',
-            'Wiele segmentów ulicy wewnątrz rzeki. Nie mogę kontynuować.', 'Other', 'Forest', 'Delete segment', 'Canal')
+            'Wiele segmentów ulicy wewnątrz rzeki. Nie mogę kontynuować.', 'Other', 'Forest', 'Delete segment', 'Canal']
           break
         case 'pt-br': // 2015-04-05: Portuguese - By esmota
-          langText = new Array('', 'Largura (metros)', 'Criar uma nova rua, selecione e clique neste botão.', 'Rua para Rio', 'Comprimento ilimitado (instável)',
+          langText = ['', 'Largura (metros)', 'Criar uma nova rua, selecione e clique neste botão.', 'Rua para Rio', 'Comprimento ilimitado (instável)',
             'Nenhuma nova rua, sem salvar, selecionada!', 'Todos os segmentos de rua estão dentro de um rio. Nada a fazer.',
-            'Múltiplos segmentos de rua dentro de um rio. Impossível continuar.', 'Other', 'Forest', 'Delete segment', 'Canal')
+            'Múltiplos segmentos de rua dentro de um rio. Impossível continuar.', 'Other', 'Forest', 'Delete segment', 'Canal']
           break
         default: // 2014-06-05: English
-          langText = new Array('', 'Width (in meters)', 'Create a new street, select and click this button.', 'River', 'Unlimited size (unsafe)',
+          langText = ['', 'Width (in meters)', 'Create a new street, select and click this button.', 'River', 'Unlimited size (unsafe)',
             'No unsaved and selected new street found!', 'All street segments inside river. Cannot continue.',
-            'Multiple street segments inside river. Cannot continue.', 'Other', 'Forest', 'Delete segment', 'Canal')
+            'Multiple street segments inside river. Cannot continue.', 'Other', 'Forest', 'Delete segment', 'Canal']
       }
     }
 
